@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -30,7 +31,7 @@ function authenticate() {
 function get_account_info() {
 	curl --request GET \
 		--url "$api/isAccount" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -38,7 +39,7 @@ function get_account_info() {
 function get_meats() {
 	curl --request GET \
 		--url "$api/meatsList" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -46,7 +47,7 @@ function get_meats() {
 function get_grills() {
 	curl --request GET \
 		--url "$api/grillList" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -54,7 +55,7 @@ function get_grills() {
 function get_markets() {
 	curl --request GET \
 		--url "$api/markets-list" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -62,7 +63,7 @@ function get_markets() {
 function get_artefacts() {
 	curl --request GET \
 		--url "$api/artefacts-list" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -71,7 +72,7 @@ function buy_grill() {
 	# 1 - grill_id: (integer): <grill_id>
 	curl --request POST \
 		--url "$api/buy-grill?grill=$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -80,7 +81,7 @@ function get_rating() {
 	# 1 - type: (string): <type>
 	curl --request GET \
 		--url "$api/rating-$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -88,7 +89,7 @@ function get_rating() {
 function get_daily_bonus() {
 	curl --request GET \
 		--url "$api/dailyBonus" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -97,7 +98,7 @@ function activate_promo() {
 	# 1 - promo: (string): <promo>
 	curl --request GET \
 		--url "$api/activate-promo?promo=$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -105,7 +106,7 @@ function activate_promo() {
 function get_referrals_list() {
 	curl --request GET \
 		--url "$api/referals-list" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -115,7 +116,7 @@ function transfer_money() {
 	# 2 - amount: (integer): <amount>
 	curl --request GET \
 		--url "$api/transfer-money?transfer_id=$1&amount=$2" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -125,7 +126,7 @@ function buy_meat() {
 	# 2 - count: (integer): <count>
 	curl --request POST \
 		--url "$api/buy-meat?meat=$1&count=$2" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -134,7 +135,7 @@ function cook_barbecue() {
 	# 1 - meat: (string): <meat>
 	curl --request GET \
 		--url "$api/cook-barbecue?meat=$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
