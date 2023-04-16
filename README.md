@@ -3,6 +3,6 @@ Web-API for [barbecue](https://vk.com/barbecueapp) an vk service which is a clic
 
 ## Example
 ```bash
-source barbecue.sh
+source ./barbecue.sh
 authenticate "sign" "vk_user_id" "vk_ts" "vk_ref" "vk_session_hash"
 ```
